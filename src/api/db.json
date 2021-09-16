@@ -1,0 +1,36 @@
+{
+  "empleados": [
+    {
+      "id": 1631723152051,
+      "cedula": "1704658051",
+      "nombres": "Blanca",
+      "apellidos": "Guaman",
+      "correo": "blancag@hotmail.com",
+      "fecha": "",
+      "direccion": "",
+      "telefono": "",
+      "estvacuna": "",
+      "tipovacuna": "",
+      "fechavacuna": "",
+      "numerodosis": "",
+      "usuario": "",
+      "contra": ""
+    },
+    {
+      "id": 1631729517438,
+      "cedula": "1724510183",
+      "nombres": "Bryan",
+      "apellidos": "Guevara",
+      "correo": "bryanguevara97@hotmail.com",
+      "fecha": "2021-09-10",
+      "direccion": "g",
+      "telefono": "j",
+      "estvacuna": "j",
+      "tipovacuna": "j",
+      "fechavacuna": "2021-09-25",
+      "numerodosis": "2",
+      "usuario": "BryanG97",
+      "contra": "123"
+    }
+  ]
+}

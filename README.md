@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# KRUGER Registro de Vacunación Empleados
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto se desarrollo con React y una Fake Api llamada JSon-Server, para la evaluación de Kruger Corp (FrontEnd)
 
-## Available Scripts
+    Desarrollador: Bryan Fabián Guevara Guamán
+    Correo: bryanguevara97@hotmail.com
+    Telefono: 0985766757
 
-In the project directory, you can run:
+## Para Correr la Aplicación
+    Para iniciar correctamente la aplicación se debe seguir los siguientes pasos:
 
+    1.- Iniciar JSON - SERVER ejecutando el siguiente código en una terminar de VSCode o de cualquier editor de texto:
+### `npm run fake-api`
+            Json-Server se ejecuta en el puerto 5000 puede verificarlo en un buscador (localhost:5000/empleados), esta terminal siempre debe estar abierta.
+
+    2.- Iniciar React con la siguiente linea de comando en una nueva terminal de nuestro editor:
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+    Luego de seguir estas instrucciones ya puede utilizar la aplicación sin ningún problema.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## CONSTRUCCION
+    Para este proyecto se utilizó React para el Front End y una Fake Api llamada Json-Server
+    Se dividió en directorios separados las clases .js correspondientes a ADMINISTRADOR y EMPLEADO, así también, se separó en archivos y directorios diferentes a los formularios y tablas según su uso.
 
-### `npm test`
+## DESCRIPCIÓN
+    Esta aplicación tiene la finalidad de tener un registro de empleados vacunados y no vacunados de la empresa Kruger, para lo cual, consta de un módulo de empleado y uno de administrador.
+## Pantalla Inicio
+    La primera pantalla en ejecutarse, muestra las opciones Menú Administrador y Login Empleado
+## Menú Administrador
+    En el apartado de administrador podemos agregar un empleado nuevo, ver la información de los empleados y darlos de alta.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Login Empleado
+    En esta ventana ingresamos el usuario y la contraseña, ingresados por el administrador al dar de alta.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Actualizar Información
+    En esta ventana podemos completar la información que falta.

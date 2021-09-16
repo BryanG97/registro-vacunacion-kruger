@@ -1,0 +1,136 @@
+html{
+  box-sizing:border-box;
+  font-size:16px;
+  font-family:sans-serif;
+}
+
+*,
+*:after,
+*::before{
+  box-sizing: inherit;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"]{
+  border: thin solid #dedede;
+  border-radius: 0.30rem;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  outline: none;
+  display: block;
+  width: 40%;
+  font-size: 1rem;
+  line-height: 1;
+  background-color: transparent;
+}
+
+button,
+input[type="submit"],
+input[type="reset"]{
+  border: thin solid #444;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem 0 0;
+  display: inline-block;
+  background-color: #eee;
+  color: #444;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1;
+  text-transform: none;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+form{
+  margin-bottom: 1rem;
+}
+
+hr{
+  margin: 1rem auto;
+}
+h1{
+  margin: 1rem auto;
+}
+
+table{
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td{
+  text-align: left;
+  padding: 0.5rem;
+  border-bottom: thin solid #dedede;
+}
+
+/*BARRA SUPERIOR*/
+#navegador{
+  position: fixed;
+  margin: 0px;;
+  width: 100%;
+  height: 50px;
+  background-color: #3D5889;  
+  
+  }
+#navegador ul{
+  list-style-type: none;
+  text-align: center;
+}
+#navegador li{
+  display: inline;
+  text-align: center;
+  margin: 0px 30px 0 0;
+}
+#navegador ul li{
+  padding: 2px 7px 2px 7px;
+  color: #666;
+  background-color: transparent;
+  border: 1px solid transparent;
+  text-decoration: none;
+}
+
+/*ADMINISTRADOR-- BARRA SUPERIOR*/
+#navegador2{
+  position: fixed;
+  margin: 0px;;
+  width: 100%;
+  height: 50px;
+  background-color: #3D5889;  
+  
+  }
+#navegador2 ul{
+  list-style-type: none;
+  text-align: center;
+}
+#navegador2 li{
+  display: inline;
+  text-align: center;
+  margin: 0px 30px 0 0;
+}
+#navegador2 li{
+  padding: 2px 7px 2px 7px;
+  color: #666;
+  background-color: transparent;
+  border: 1px solid transparent;
+  text-decoration: none;
+}
+/*//////////////LOGIN*/
+.containerPrincipal{
+  position:fixed;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  border: 1px solid #3D5889;
+  padding: 60px;
+  background-color: white;
+}
+
+.containerSecundario{
+  text-align: center;
+}
