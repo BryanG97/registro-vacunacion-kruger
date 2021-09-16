@@ -9,12 +9,12 @@ Este proyecto se desarrollo con React y una Fake Api llamada JSon-Server, para l
 ## Para Correr la Aplicación
     Para iniciar correctamente la aplicación se debe seguir los siguientes pasos:
 
-    1.- Iniciar JSON - SERVER ejecutando el siguiente código en una terminar de VSCode o de cualquier editor de texto:
-### `npm run fake-api`
+### `1.- Iniciar JSON - SERVER ejecutando el siguiente código en una terminar de VSCode o de cualquier editor de texto:`
+     npm run fake-api
             Json-Server se ejecuta en el puerto 5000 puede verificarlo en un buscador (localhost:5000/empleados), esta terminal siempre debe estar abierta.
 
-    2.- Iniciar React con la siguiente linea de comando en una nueva terminal de nuestro editor:
-### `npm start`
+### `2.- Iniciar React con la siguiente linea de comando en una nueva terminal de nuestro editor:`
+ npm start
 
     Luego de seguir estas instrucciones ya puede utilizar la aplicación sin ningún problema.
 
