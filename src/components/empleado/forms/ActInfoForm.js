@@ -13,8 +13,8 @@ const initialForm={
     direccion:"",
     telefono:"",
     estvacuna:"",
-    tipovacuna:"",
-    fechavacuna:"",
+    tipovacuna:"DATO INCOMPLETO",
+    fechavacuna:"DATO INCOMPLETO",
     numerodosis:"",
 
     usuario:cookies.get('usuario'),
@@ -38,10 +38,16 @@ const ActInfoForm=({updateData,setDataToEdit,createData})=>{
     //PARA HACER EL SUBMIT 
     const handleSubmit=(e)=>{
         e.preventDefault();
-        if(!form.fecha||!form.direccion||!form.telefono||!form.estvacuna
-            ||!form.tipovacuna||!form.fechavacuna||!form.numerodosis){
+        if(!form.fecha||!form.direccion||!form.telefono||!form.estvacuna){
             alert("Datos Incompletos");
             return;
+        }
+
+        if(vacunado.checked){
+            if(!form.tipovacuna || !form.fechavacuna || !form.numerodosis){
+                alert("Datos Incompletos");
+                return;
+            }
         }
 
         //PARA IDENTIFICAR EL ACTUALIZAR DEL INSERTAR
@@ -58,30 +64,72 @@ const ActInfoForm=({updateData,setDataToEdit,createData})=>{
         setDataToEdit(null);
     };
 
+    
+    ////// VERIFICAR VACUNADO NO VACUNADO
+
+    var vacunado = document.getElementById('vacunado');
+    var novacunado = document.getElementById('novacunado');
+
+    var tvacuna = document.getElementById('tvacuna');
+    var fvacuna = document.getElementById('fvacuna');
+    var nvacuna = document.getElementById('nvacuna');
+
+    function estadoVacunacion() {
+        if (novacunado.checked) {
+            tvacuna.disabled = true;
+            fvacuna.disabled = true;
+            nvacuna.disabled = true;
+        } else if(vacunado.checked) {
+            tvacuna.disabled = false;
+            fvacuna.disabled = false;
+            nvacuna.disabled = false;
+        }
+      }
+    // PARA LLAMAR A LA FUNCION DE DETECCION DEL RADIOBUTTON
+    if(vacunado){ // El if se coloca porque no reconoce el el id de radiobutton ya que aun no se ejecuta esa parte, el if hace que se ejecute luego del formulario
+        vacunado.addEventListener('change', estadoVacunacion);
+        novacunado.addEventListener('change', estadoVacunacion);
+    }
+
     return(
         <div>
             <h2>INGRESE SU INFORMACIÓN</h2>
 
-            <form onSubmit={handleSubmit}> 
-                <input type="text" name="cedula" placeholder="Cedula" readOnly onChange={handleChange} value={form.cedula}/>
-                <input type="text" name="nombres" placeholder="Nombres" readOnly onChange={handleChange} value={form.nombres}/>
-                <input type="text" name="apellidos" placeholder="Apellidos" readOnly onChange={handleChange} value={form.apellidos}/>
-                <input type="text" name="correo" placeholder="Correo" readOnly onChange={handleChange} value={form.correo}/>
+            <form onSubmit={handleSubmit} autocomplete="off">  
+                <input type="text" name="cedula" placeholder="Cedula" readOnly onChange={handleChange} value={form.cedula} style={{display:'none'}}/>
+                <input type="text" name="nombres" placeholder="Nombres" readOnly onChange={handleChange} value={form.nombres} style={{display:'none'}}/>
+                <input type="text" name="apellidos" placeholder="Apellidos" readOnly onChange={handleChange} value={form.apellidos} style={{display:'none'}}/>
+                <input type="text" name="correo" placeholder="Correo" readOnly onChange={handleChange} value={form.correo} style={{display:'none'}}/>
                 
-                <input type="text" name="usuario" placeholder="Usuario" readOnly onChange={handleChange} value={form.usuario}/>
+                <input type="text" name="usuario" placeholder="Usuario" readOnly onChange={handleChange} value={form.usuario} style={{display:'none'}}/>
                 
                 <label>Fecha de Nacimiento</label><br/>
                 <input type="date" name="fecha" onChange={handleChange} value={form.fecha}/>
                 <br/>&nbsp;
                 <input type="text" name="direccion" placeholder="Dirección" onChange={handleChange} value={form.direccion}/>
-                <input type="text" name="telefono" placeholder="Telefono Móvil" onChange={handleChange} value={form.telefono}/>
-                <input type="text" name="estvacuna" placeholder="Estado Vacuna" onChange={handleChange} value={form.estvacuna}/>
-                <input type="text" name="tipovacuna" placeholder="Tipo Vacuna" onChange={handleChange} value={form.tipovacuna}/>
-                
-                <label>Fecha de Vacuna</label><br/>
-                <input type="date" name="fechavacuna" onChange={handleChange} value={form.fechavacuna}/>
+                <input type="text" pattern="^[0-9]{1,10}$" name="telefono" placeholder="Telefono Móvil" onChange={handleChange} value={form.telefono}/>
+
+                <label>ESTADO VACUNACIÓN</label><br/>
+                <label>Vacunado</label>
+                <input type="radio" value="VACUNADO" id = "vacunado" name="estvacuna" onChange={handleChange}/> <br/>
+                <label>No Vacunado</label>
+                <input type="radio" value="NO VACUNADO" id = "novacunado" name="estvacuna" onChange={handleChange}/> <br/>
+
+                <br/>
+                <label>SELECCIONE EL TIPO DE VACUNA</label><br/>
+                <select name="tipovacuna" onChange={handleChange} id="tvacuna">
+                    <option >-- SELECCIONE --</option>
+                    <option value="SPUTNIK">Sputnik</option>
+                    <option value="ASTRAZENECA" >AstraZeneca</option>
+                    <option value="PFIZER">Pfizer</option>
+                    <option value="JHONSON&JHONSON">Jhonson & Jhonson</option>
+                    </select>
+
+                <br/>
+                <br/><label>Fecha de Vacuna</label><br/>
+                <input type="date" name="fechavacuna" onChange={handleChange} value={form.fechavacuna} id="fvacuna"/>
                 <br/>&nbsp;
-                <input type="text" name="numerodosis" placeholder="Número de Dosis" onChange={handleChange} value={form.numerodosis}/>
+                <input type="text" pattern="^[0-3]{1}$" name="numerodosis" placeholder="Número de Dosis" onChange={handleChange} value={form.numerodosis} id="nvacuna"/>
                                 
 
                 <input type="submit" value="GUARDAR"/>
@@ -89,4 +137,5 @@ const ActInfoForm=({updateData,setDataToEdit,createData})=>{
         </div>
     );
 }
+        
 export default ActInfoForm;

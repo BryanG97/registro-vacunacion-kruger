@@ -14,13 +14,7 @@ function App() {
   return (
     <Router>
       <div>
-        <div id="navegador">
-          <ul>
-                <li><Link to="/" style={{ textDecoration: 'none' ,color: 'white'}}>INICIO</Link></li>                  
-                <li><Link to="/menuadmin" style={{ textDecoration: 'none' ,color: 'white'}}>MENÚ ADMINISTRADOR</Link></li>                  
-                <li><Link to="/loginempl" style={{ textDecoration: 'none',color: 'white' }}>LOGIN EMPLEADO</Link></li>
-              </ul> 
-            </div>
+        
         <Switch>
         <Route path="/loginempl">
             <LoginEmpleado/>

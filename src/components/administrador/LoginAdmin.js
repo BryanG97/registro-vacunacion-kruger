@@ -1,21 +1,15 @@
 import React from 'react';
-//import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import Cookies from 'universal-cookie/es6';
-import{
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-  }from "react-router-dom";
 
 
-  //URL DE LA API
-  const baseUrl="http://localhost:5000/empleados";
 
-  const cookies = new Cookies();
+//URL DE LA API PARTE ADMINISTRADOR
+const baseUrl="http://localhost:5000/administradores";
 
-class LoginEmpl extends React.Component{
+const cookies = new Cookies(); 
+
+class LoginAdmin extends React.Component{
 
     //Capturar Inputs
     state={
@@ -46,19 +40,14 @@ class LoginEmpl extends React.Component{
                 return response.data;
             }).then(response=>{
                 if(response.length > 0){
+
                     //GUARDO VALORES EN LAS COOKIES
                     var respuesta=response[0];
-                    cookies.set('id', respuesta.id,{path: "/"});
-                    cookies.set('cedula', respuesta.cedula,{path: "/"});
-                    cookies.set('nombres', respuesta.nombres,{path: "/"});
-                    cookies.set('apellidos', respuesta.apellidos,{path: "/"});
-                    cookies.set('correo', respuesta.correo,{path: "/"});
                     cookies.set('usuario', respuesta.usuario,{path: "/"});
-                    cookies.set('contra', respuesta.contra,{path: "/"});
                     
 
                     alert(`Bienvenido ${respuesta.usuario}`);
-                    window.location.href="./menuemple";
+                    window.location.href="./menuadmin";
                     
                 }else{
                     alert(`Usuario o Contraseña Incorrectos`);
@@ -74,6 +63,7 @@ class LoginEmpl extends React.Component{
             <div id="navegador">
           <ul>
                 <li><a href="/" style={{ textDecoration: 'none' ,color: 'white'}}>INICIO</a></li>                  
+                {/* <li><a href="/menuadmin" style={{ textDecoration: 'none' ,color: 'white'}}>MENÚ ADMINISTRADOR</a></li>     */}
                 <li><a href="/loginadmin" style={{ textDecoration: 'none' ,color: 'white'}}>LOGIN ADMINISTRADOR</a></li>                  
                 <li><a href="/loginemple" style={{ textDecoration: 'none',color: 'white' }}>LOGIN EMPLEADO</a></li>
               </ul> 
@@ -82,30 +72,33 @@ class LoginEmpl extends React.Component{
                 <br/>
                 <br/>
                 <br/>
-            <h2 align="center">INICIAR SESIÓN EMPLEADO</h2>
+            <h2 align="center">INICIAR SESIÓN ADMINISTRADOR</h2>
+            <br/>
             <div className="containerPrincipal">
                 <div className="containerSecundario">
                     <div className="form-group">
-                        <label>Usuario:</label>
-                        <br/>
-                        <input type="text" name="usuario" className="form-control" 
-                        style={{width: '100%'}} onChange={this.handleChange} autocomplete="off"/>
-                        <br/>
-                        <label>Contraseña:</label>
-                        <br/>
-                        <input type="password" name="contra" className="form-control" 
-                        style={{width: '100%'}} onChange={this.handleChange}/>
-                        <br/>
-                        <button type="submit" className="btn btn-primary" onClick={()=>this.iniciarSesion()} >Iniciar Sesión</button>
-
+                        
+                            <label>Usuario:</label>
+                            <br/>
+                            <input type="text" name="usuario" className="form-control" 
+                            style={{width: '100%'}} onChange={this.handleChange} autocomplete="off"/>
+                            <br/>
+                            <label>Contraseña:</label>
+                            <br/>
+                            <input type="password" name="contra" className="form-control" 
+                            style={{width: '100%'}} onChange={this.handleChange}/>
+                            <br/>
+                            <button type="submit" className="btn btn-primary" onClick={()=>this.iniciarSesion()} >Iniciar Sesión</button>
+                        
                     </div>
 
                 </div>
 
             </div>
+            
             </div>
         );
     }
 }
 
-export default LoginEmpl;
+export default LoginAdmin;

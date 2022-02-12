@@ -8,13 +8,13 @@ const initialForm={
     apellidos:"",
     correo:"",
     
-    fecha:"",
-    direccion:"",
-    telefono:"",
-    estvacuna:"",
-    tipovacuna:"",
-    fechavacuna:"",
-    numerodosis:"",
+    fecha:"DATO INCOMPLETO",
+    direccion:"DATO INCOMPLETO",
+    telefono:"DATO INCOMPLETO",
+    estvacuna:"DATO INCOMPLETO",
+    tipovacuna:"DATO INCOMPLETO",
+    fechavacuna:"DATO INCOMPLETO",
+    numerodosis:"DATO INCOMPLETO",
 
     usuario:"",
     contra:""
@@ -69,7 +69,7 @@ const InsertAltaForm=({createData, updateData,dataToEdit,setDataToEdit})=>{
         <div>
             <h2>INGRESE USUARIO Y CONTRASEÑA</h2>
 
-            <form onSubmit={handleSubmit}> 
+            <form onSubmit={handleSubmit} autocomplete="off"> 
                 <input type="text" name="cedula" placeholder="Cedula" readOnly onChange={handleChange} value={form.cedula}/><br/>
                 <input type="text" name="nombres" placeholder="Nombres" readOnly onChange={handleChange} value={form.nombres}/><br/>
                 <input type="text" name="apellidos" placeholder="Apellidos" readOnly onChange={handleChange} value={form.apellidos}/><br/>

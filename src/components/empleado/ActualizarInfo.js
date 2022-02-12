@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import { helpHttp } from '../helpers/helpHttp';
 import ActInfoForm from './forms/ActInfoForm';
 import Cookies from "universal-cookie/es6";
-const cookies= new Cookies();
+import InfoEmplTab from './tabl/InfoEmplTab';
+//const cookies= new Cookies();
 
 const ActualizarInfo=()=>{
     
@@ -14,7 +15,7 @@ const ActualizarInfo=()=>{
     let url = "http://localhost:5000/empleados";
     //LEER DATOS DE JSON-SERVER
     useEffect(()=>{
-        api.get(url).then((res)=>{
+        api.get(url).then(res=>{
             if(!res.err){
                 setDb(res);
             }else{
@@ -38,6 +39,7 @@ const ActualizarInfo=()=>{
                 let newData = db.map(element => element.id === data.id? data: element);
                 setDb(newData);
                 let isDelete = window.confirm(`Información Actualizada`);
+                //window.location.href="./miinfo";
             }else{
             }
         });

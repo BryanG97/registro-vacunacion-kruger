@@ -26,7 +26,7 @@ const RegistrarEmpl = () =>{
     //Variables de CRUD
     ////////////////////////////////INSERTAR REGISTROS
     const createData = (data)=>{
-        data.id = Date.now();
+        data.id = Date.now(); // Para agregar el id a cada empleado
         //console.log(data);//Imprimir en consola para verificar
         let options = {
             body:data,
