@@ -30,7 +30,7 @@ Este proyecto se desarrolló en React y con una Fake Api llamada JSon-Server, pa
         CONTRASEÑA: 123admin
 
     Para ingresar en el módulo de empleado:
-        -Si desea ingresar en la cuenta de un usuario ya registrado ingrese en el buscador: (localhost:5000/empleados) y escoga un usuario al que se le haya asignado usuario y contraseña.  
+        -Si desea ingresar en la cuenta de un usuario ya registrado ingrese en el buscador: (localhost:5000/empleados) y seleccione un usuario al que se le haya asignado usuario y contraseña.  
 
 ## CONSTRUCCION
     Para este proyecto se utilizó React para el Front End y una Fake Api llamada Json-Server
