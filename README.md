@@ -4,9 +4,11 @@ Este proyecto se desarrolló en React y con una Fake Api llamada JSon-Server, pa
 
 # ¡NOTA!
     En caso de tener problemas con la ejecución de la aplicación, contactar al autor mediante los siguientes medios de comunicación:
-        Desarrollador: Bryan Fabián Guevara Guamán
+        Desarrollador: Ing. Bryan Fabián Guevara Guamán
         Correo: bryanguevara97@hotmail.com
         Telefono: 0985766757
+## Cómo descargar la aplicación
+    git clone https://github.com/BryanG97/registro-vacunacion-kruger.git 
 
 ## Antes de Correr la Aplicación
     Asegurarse de tener insatalado Node.js y JSon-Server.
